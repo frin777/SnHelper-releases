@@ -1,7 +1,24 @@
 {
-    "version":  "1.1.2",
-    "changelog":  [
-                      "Add: landing page on GitHub Pages (SnHelper-releases), showing the current version and a download link, updated automatically on each publish"
-                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.2/SnHelper-1.1.2.zip"
+    "versions":  [
+                     {
+                         "version":  "1.1.2",
+                         "changelog":  [
+                                           "Add: landing page on GitHub Pages (SnHelper-releases), showing the current version and a download link, updated automatically on each publish"
+                                       ]
+                     },
+                     {
+                         "version":  "1.1.3",
+                         "changelog":  [
+                                           "Change: update checks now read version.json on GitHub Pages instead of the GitHub Releases API",
+                                           "Change: periodic update check interval reduced from 10 minutes to 20 seconds"
+                                       ]
+                     },
+                     {
+                         "version":  "1.1.4",
+                         "changelog":  [
+                                           "Test: multi-version changelog verification"
+                                       ]
+                     }
+                 ],
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.4/SnHelper-1.1.4.zip"
 }
