@@ -116,7 +116,13 @@
                                            "Fix: with no saved tab yet (first run), or a saved plugin that no longer loads, General is now selected instead of leaving the sidebar with nothing highlighted",
                                            "Add: the taskbar icon now flashes when a new update is found, until the window is activated"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.8",
+                         "changelog":  [
+                                           "Add: Performance tab now shows each loaded plugin\u0027s CPU load in milliseconds per tick, alongside host CPU/RAM"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.7/SnHelper-1.1.7.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.8/SnHelper-1.1.8.zip"
 }
