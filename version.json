@@ -103,7 +103,13 @@
                                            "Change: update button and open overlay now refresh live on every periodic check, instead of freezing on the version found when the overlay was opened",
                                            "Change: update overlay changelog is now grouped by version with green version headers, gray text, and separators between versions"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.6",
+                         "changelog":  [
+                                           "Add: the app now remembers the selected tab or plugin and restores it on the next launch"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.5/SnHelper-1.1.5.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.6/SnHelper-1.1.6.zip"
 }
