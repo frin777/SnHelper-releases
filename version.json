@@ -109,7 +109,14 @@
                          "changelog":  [
                                            "Add: the app now remembers the selected tab or plugin and restores it on the next launch"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.7",
+                         "changelog":  [
+                                           "Fix: with no saved tab yet (first run), or a saved plugin that no longer loads, General is now selected instead of leaving the sidebar with nothing highlighted",
+                                           "Add: the taskbar icon now flashes when a new update is found, until the window is activated"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.6/SnHelper-1.1.6.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.7/SnHelper-1.1.7.zip"
 }
