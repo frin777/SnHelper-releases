@@ -122,7 +122,13 @@
                          "changelog":  [
                                            "Add: Performance tab now shows each loaded plugin\u0027s CPU load in milliseconds per tick, alongside host CPU/RAM"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.9",
+                         "changelog":  [
+                                           "Change: plugin load on the Performance tab is now shown as a table with icon, name, and load columns, instead of plain text lines"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.8/SnHelper-1.1.8.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.9/SnHelper-1.1.9.zip"
 }
