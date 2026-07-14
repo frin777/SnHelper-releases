@@ -1,6 +1,84 @@
 {
     "versions":  [
                      {
+                         "version":  "1.0.0",
+                         "changelog":  [
+                                           "Initial release: plugin loading, sidebar list, custom window design, settings persistence, auto-update"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.1",
+                         "changelog":  [
+                                           "Add: applying downloaded updates (Updater.exe backs up the previous version, replaces host files, restarts the host)",
+                                           "Add: download/extract progress and error/retry states in the update overlay",
+                                           "Change: Updater.exe ships inside each release zip instead of the install folder, and deletes itself after applying an update"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.2",
+                         "changelog":  [
+                                           "Fix: test release for verifying the update-installation flow end to end"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.3",
+                         "changelog":  [
+                                           "Fix: an unhandled exception if Updater.exe failed to start (e.g. blocked by antivirus) silently crashed the host instead of showing an error"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.4",
+                         "changelog":  [
+                                           "Add: show the reason in the title bar when the update check itself fails (e.g. GitHub API rate limit), instead of silently showing nothing"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.5",
+                         "changelog":  [
+                                           "Fix: Updater.exe could fail silently while copying files (e.g. a file briefly locked after the host closed), leaving neither the old nor new version running",
+                                           "Add: Updater.exe now retries locked-file errors, restores the previous version from backup if the update itself fails, and writes progress to Release/Updater.log"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.6",
+                         "changelog":  [
+                                           "Fix: a race between the host closing itself and Updater.exe starting up could leave neither the old nor new host running",
+                                           "Change: the host no longer closes itself after launching Updater.exe — Updater.exe now kills the host process by PID before replacing files"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.7",
+                         "changelog":  [
+                                           "Fix: Updater.exe never received its arguments correctly because the install path ends in a backslash, which escapes the closing quote in the Windows command line and corrupts argument parsing — clicking Update would get stuck on \"Installing update...\" forever",
+                                           "Change: pass arguments to Updater.exe via ArgumentList instead of a manually-quoted string"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.8",
+                         "changelog":  [
+                                           "Add: application icon (\"Sn\" on accent background) in the title bar, taskbar, and .exe"
+                                       ]
+                     },
+                     {
+                         "version":  "1.0.9",
+                         "changelog":  [
+                                           "Add: custom application-wide font (Fontin Bold)",
+                                           "Add: live CPU/RAM usage of the SnHelper process on the Performance tab"
+                                       ]
+                     },
+                     {
+                         "version":  "1.1.0",
+                         "changelog":  [
+                                           "Add: check for updates every 10 minutes while the app is running, not just at startup"
+                                       ]
+                     },
+                     {
+                         "version":  "1.1.1",
+                         "changelog":  [
+                                           "Change: the released host is now a single SnHelper.exe (framework-dependent, .NET Desktop Runtime still required on the user\u0027s machine) instead of an exe with separate .dll/.runtimeconfig.json files"
+                                       ]
+                     },
+                     {
                          "version":  "1.1.2",
                          "changelog":  [
                                            "Add: landing page on GitHub Pages (SnHelper-releases), showing the current version and a download link, updated automatically on each publish"
@@ -9,10 +87,16 @@
                      {
                          "version":  "1.1.3",
                          "changelog":  [
-                                           "Change: update checks now read version.json on GitHub Pages instead of the GitHub Releases API, so they're no longer subject to the 60-requests-per-hour anonymous rate limit",
-                                           "Change: periodic update check interval reduced from 10 minutes to 20 seconds, now that it's no longer rate-limited"
+                                           "Change: update checks now read version.json on GitHub Pages instead of the GitHub Releases API, so they\u0027re no longer subject to the 60-requests-per-hour anonymous rate limit",
+                                           "Change: periodic update check interval reduced from 10 minutes to 20 seconds, now that it\u0027s no longer rate-limited"
+                                       ]
+                     },
+                     {
+                         "version":  "1.1.4",
+                         "changelog":  [
+                                           "Add: update overlay now shows the changelog of every version between the currently installed one and the latest, not just the latest"
                                        ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.3/SnHelper-1.1.3.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.4/SnHelper-1.1.4.zip"
 }
