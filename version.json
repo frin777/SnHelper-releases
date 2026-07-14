@@ -1,7 +1,7 @@
 {
-    "version":  "1.1.4",
+    "version":  "1.1.2",
     "changelog":  [
-                      "Test: periodic timer verification"
+                      "Add: landing page on GitHub Pages (SnHelper-releases), showing the current version and a download link, updated automatically on each publish"
                   ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.4/SnHelper-1.1.4.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.2/SnHelper-1.1.2.zip"
 }
