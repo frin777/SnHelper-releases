@@ -128,7 +128,13 @@
                          "changelog":  [
                                            "Change: plugin load on the Performance tab is now shown as a table with icon, name, and load columns, instead of plain text lines"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.10",
+                         "changelog":  [
+                                           "Fix: added a visible separator and spacing between the process metrics and the plugin load table on the Performance tab"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.9/SnHelper-1.1.9.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.10/SnHelper-1.1.10.zip"
 }
