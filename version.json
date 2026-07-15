@@ -175,7 +175,17 @@
                                            "Fix: publish-release.ps1 failed to parse with a \"terminator expected\" error on machines whose system codepage isn\u0027t UTF-8 (e.g. Cyrillic Windows-1251), because a non-ASCII character in the script was misread and broke string parsing for the rest of the file",
                                            "Change: the font and font-size controls on the General tab now use a custom dark-themed look matching the rest of the app, instead of the default white Windows ComboBox/Slider"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.14",
+                         "changelog":  [
+                                           "Change: rebuilt the update flow to remove the previous window where an interrupted update could leave the app broken. Updater.exe now launches immediately when Update is clicked and waits idly for the host to exit, instead of being launched at the last moment from a freshly downloaded and not-yet-verified archive",
+                                           "Change: the host downloads and extracts the update into a staging folder while it is still running, and only closes itself once the staged install is verified complete — a failed download or extraction now shows a retry option without ever touching the running install",
+                                           "Change: if the host closes without a completed update (e.g. it was closed manually while a download was in progress), the updater now relaunches the existing install automatically instead of leaving the app closed",
+                                           "Change: Updater.exe now ships inside every release install instead of only inside the update archive, and runs from a temporary copy while active so it never locks the install folder it needs to replace",
+                                           "Fix: the updater no longer shows a console window while running"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.13/SnHelper-1.1.13.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.14/SnHelper-1.1.14.zip"
 }
