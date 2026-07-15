@@ -134,7 +134,22 @@
                          "changelog":  [
                                            "Fix: added a visible separator and spacing between the process metrics and the plugin load table on the Performance tab"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.11",
+                         "changelog":  [
+                                           "Add: plugins can now provide their own UI, shown in the work area instead of the description text",
+                                           "Add: each plugin can be individually enabled or disabled with a toggle switch above its view; disabled plugins stop ticking, turn gray in the sidebar, and move to the bottom of the plugin list",
+                                           "Add: TLI-Logs plugin, reading Torchlight Infinite\u0027s UE_game.log and showing new lines live in its own view",
+                                           "Fix: disabling a plugin could freeze the window for up to 3 seconds because all plugins shared one cancellation token, so Tick() never actually saw a stop request until the host itself closed",
+                                           "Change: the Performance tab is now shown as cards (host metrics, plugin load list) instead of plain text, with a relative load bar under each plugin\u0027s number, plugin rows spaced with no divider line between them",
+                                           "Change: removed the Developer tab for now",
+                                           "Fix: the plugin load status on the Performance tab said \"остановлен\" instead of \"stopped\" — the app\u0027s UI is English-only",
+                                           "Change: disabled plugins are no longer listed on the Performance tab, since they don\u0027t tick and have no load to show",
+                                           "Change: the plugin load bar on the Performance tab is now scaled against a fixed 1ms ceiling instead of the busiest plugin currently running, so it reflects actual load instead of always looking nearly full with a single plugin loaded",
+                                           "Change: redesigned the update changelog overlay — each version is now its own card, every changelog line has a small icon for Add/Fix/Change instead of the text prefix, the panel is capped at 80% of the main window\u0027s size with a themed thin scrollbar when it overflows"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.10/SnHelper-1.1.10.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.11/SnHelper-1.1.11.zip"
 }
