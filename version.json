@@ -168,7 +168,14 @@
                                            "Fix: the updater was carrying the old Plugins folder forward on every update instead of installing the new release\u0027s plugin builds, silently leaving users on stale/broken plugin versions after updating",
                                            "Fix: an interrupted update (locked file, antivirus scan, disk issue) could leave the install folder with a mix of old and new files, or in some failure cases delete the old SnHelper.exe before the new one finished copying — requiring a full reinstall. The updater now stages the new install in a separate folder, verifies it\u0027s complete, and only then swaps it into place with an atomic rename; a failure at any point now leaves the previous working install untouched"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.13",
+                         "changelog":  [
+                                           "Fix: publish-release.ps1 failed to parse with a \"terminator expected\" error on machines whose system codepage isn\u0027t UTF-8 (e.g. Cyrillic Windows-1251), because a non-ASCII character in the script was misread and broke string parsing for the rest of the file",
+                                           "Change: the font and font-size controls on the General tab now use a custom dark-themed look matching the rest of the app, instead of the default white Windows ComboBox/Slider"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.12/SnHelper-1.1.12.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.13/SnHelper-1.1.13.zip"
 }
