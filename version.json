@@ -185,7 +185,13 @@
                                            "Change: Updater.exe now ships inside every release install instead of only inside the update archive, and runs from a temporary copy while active so it never locks the install folder it needs to replace",
                                            "Fix: the updater no longer shows a console window while running"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.15",
+                         "changelog":  [
+                                           "Fix: testing"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.14/SnHelper-1.1.14.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.15/SnHelper-1.1.15.zip"
 }
