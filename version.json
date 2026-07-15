@@ -149,7 +149,26 @@
                                            "Change: the plugin load bar on the Performance tab is now scaled against a fixed 1ms ceiling instead of the busiest plugin currently running, so it reflects actual load instead of always looking nearly full with a single plugin loaded",
                                            "Change: redesigned the update changelog overlay — each version is now its own card, every changelog line has a small icon for Add/Fix/Change instead of the text prefix, the panel is capped at 80% of the main window\u0027s size with a themed thin scrollbar when it overflows"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.12",
+                         "changelog":  [
+                                           "Fix: the update changelog scrollbar did not appear or scroll, because MaxHeight on the panel does not constrain a ScrollViewer nested inside a StackPanel",
+                                           "Fix: changelog lines were clipped instead of wrapping, because a horizontal StackPanel gives its child unlimited width so TextWrapping had nothing to wrap against",
+                                           "Change: the update overlay is now twice as wide (720px) and drops the redundant version header, since the version is already shown in the title bar button and each version card",
+                                           "Add: the update overlay now opens automatically once per newly found version, instead of requiring a manual click on the title bar button",
+                                           "Change: replaced the Fontin-Bold display font with JetBrains Mono across the whole app",
+                                           "Add: General tab now has an Appearance card to pick the app\u0027s font (JetBrains Mono, Inter, Fira Code, Roboto Mono) and text size, applied immediately without restarting",
+                                           "Add: Segoe UI (the Windows system font) to the font picker",
+                                           "Change: font files are now copied next to SnHelper.exe in a Fonts folder instead of being embedded in the assembly, so they don\u0027t bloat the single-file exe",
+                                           "Change: SnHelper.exe is now always published as a single file, even from a plain local build, not just from the release script",
+                                           "Change: publish-release.ps1 no longer asks for confirmation before publishing — it publishes automatically once the build succeeds",
+                                           "Change: Segoe UI is now the default font instead of JetBrains Mono",
+                                           "Change: default font size is now 12 instead of 13",
+                                           "Fix: the updater was carrying the old Plugins folder forward on every update instead of installing the new release\u0027s plugin builds, silently leaving users on stale/broken plugin versions after updating",
+                                           "Fix: an interrupted update (locked file, antivirus scan, disk issue) could leave the install folder with a mix of old and new files, or in some failure cases delete the old SnHelper.exe before the new one finished copying — requiring a full reinstall. The updater now stages the new install in a separate folder, verifies it\u0027s complete, and only then swaps it into place with an atomic rename; a failure at any point now leaves the previous working install untouched"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.11/SnHelper-1.1.11.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.12/SnHelper-1.1.12.zip"
 }
