@@ -198,7 +198,13 @@
                                            "Change: Updater.exe is no longer a file that ships in the install folder next to SnHelper.exe. It\u0027s now embedded inside SnHelper.exe itself and extracted to a temp folder only for the moment an update runs, so a normal install never has an Updater.exe sitting on disk",
                                            "Fix: the update flow\u0027s staging/backup folders and log file were accidentally being computed as a path inside the install folder instead of next to it, which would have made the swap step fail outright the first time this new update flow ran for real"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.17",
+                         "changelog":  [
+                                           "Fix: testing2"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.16/SnHelper-1.1.16.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.17/SnHelper-1.1.17.zip"
 }
