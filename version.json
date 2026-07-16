@@ -339,7 +339,15 @@
                                            "Fix: the SamplePlugin/TLI-Logs/Slow Load Test icons were off-center within their square - re-centered based on the actual drawn shape",
                                            "Change: sidebar item text is now always bold, not just when selected"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.36",
+                         "changelog":  [
+                                           "Change: the app icon (.exe, taskbar, title bar) was recolored to match the current VS Code Dark+ palette - still \"Sn\" on a rounded square, now in the app\u0027s actual accent blue instead of its old color",
+                                           "Fix: the recolored icon wasn\u0027t showing up because Windows Explorer caches exe icons by filename - renamed icon.ico to icon1.ico so the new icon isn\u0027t shadowed by the stale cached one",
+                                           "Change: redesigned the app icon as a hub with two connected plugin nodes, matching the host/plugin visual already used on the landing page, instead of just the \"Sn\" letters"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.35/SnHelper-1.1.35.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.36/SnHelper-1.1.36.zip"
 }
