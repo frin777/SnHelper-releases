@@ -259,7 +259,17 @@
                          "changelog":  [
                                            "test"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.28",
+                         "changelog":  [
+                                           "Add: a reusable theme library (colors, control styles, and C# helpers) shared across the host and any plugin, replacing colors and styles that used to be duplicated inline in the main window",
+                                           "Add: plugins without their own icon file now get an automatically generated one (the first two letters of the plugin\u0027s name on an accent-colored rounded square) instead of a plain colored dot",
+                                           "Change: a plugin\u0027s manifest.json only needs name, version, and description now - id, entryAssembly, and entryType are inferred from the plugin\u0027s folder name and its compiled assembly, and no longer need to be written by hand",
+                                           "Change: plugin icons are found automatically (icon.png/.ico/.jpg/.jpeg in the plugin\u0027s own folder) instead of being named in the manifest",
+                                           "Change: darkened the app\u0027s background colors for better contrast"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.27/SnHelper-1.1.27.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.28/SnHelper-1.1.28.zip"
 }
