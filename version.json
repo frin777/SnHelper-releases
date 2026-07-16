@@ -306,7 +306,14 @@
                          "changelog":  [
                                            "Add: a Cancel button in the update overlay, and closing the overlay (click outside it or the X) now cancels an in-progress download too - both stop the download, kill the waiting updater process, and let you keep using the app instead of being stuck watching it finish"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.33",
+                         "changelog":  [
+                                           "Add: a header showing the current and new version (e.g. v1.1.32 -\u003e v1.1.33) at the top of the update overlay, above the changelog",
+                                           "Add: an \"INSTALLING\" label with a pulsing status dot above the update log, so it\u0027s clear the app is mid-update instead of just showing a bare log box"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.32/SnHelper-1.1.32.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.33/SnHelper-1.1.33.zip"
 }
