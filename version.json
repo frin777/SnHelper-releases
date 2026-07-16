@@ -313,7 +313,20 @@
                                            "Add: a header showing the current and new version (e.g. v1.1.32 -\u003e v1.1.33) at the top of the update overlay, above the changelog",
                                            "Add: an \"INSTALLING\" label with a pulsing status dot above the update log, so it\u0027s clear the app is mid-update instead of just showing a bare log box"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.34",
+                         "changelog":  [
+                                           "Change: a stricter, flatter sidebar look - General and Performance now show as a colored square with their initial letter, matching how plugins already look, instead of a small colored dot - and every icon is bigger",
+                                           "Change: General now shows a gear icon and Performance a bar chart icon instead of a letter",
+                                           "Change: sidebar items sit closer to the left edge, and the selected-item accent bar now touches the panel\u0027s edge instead of floating a few pixels in",
+                                           "Change: SamplePlugin and TLI-Logs now ship a real icon instead of a plain solid-color square, and Slow Load Test got one too instead of falling back to generated letters",
+                                           "Fix: the selected-item accent bar had a 3px gap before the highlight background instead of touching it directly",
+                                           "Change: sidebar icons sit a bit closer to the left edge, then nudged back right slightly after being too close",
+                                           "Fix: the SamplePlugin/TLI-Logs/Slow Load Test icons were off-center within their square - re-centered based on the actual drawn shape",
+                                           "Change: sidebar item text is now always bold, not just when selected"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.33/SnHelper-1.1.33.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.34/SnHelper-1.1.34.zip"
 }
