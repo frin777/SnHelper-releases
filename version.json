@@ -216,7 +216,13 @@
                          "changelog":  [
                                            "Change: the updater no longer renames or removes the install folder as part of applying an update. It now only copies the new files on top of the existing ones (overwriting matching files), so the install folder itself is never moved, replaced, or briefly missing during an update"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.20",
+                         "changelog":  [
+                                           "Fix: testing3"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.19/SnHelper-1.1.19.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.20/SnHelper-1.1.20.zip"
 }
