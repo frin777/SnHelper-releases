@@ -361,7 +361,13 @@
                                            "Fix: the update installer\u0027s staging folder (SnHelper_staging) was created next to the install folder - if the app lived on the Desktop, that folder showed up right there as clutter - it now lives in the system temp folder instead",
                                            "Fix: the staging folder was never deleted after a successful update, leaving it behind permanently - it\u0027s now removed once the new files are copied in"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.39",
+                         "changelog":  [
+                                           "Add: a splash screen shown while the app starts up, using the built-in .NET splash mechanism so it appears natively before WPF even initializes - does not add any startup delay"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.38/SnHelper-1.1.38.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.39/SnHelper-1.1.39.zip"
 }
