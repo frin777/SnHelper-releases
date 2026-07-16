@@ -294,7 +294,13 @@
                                            "Change: the version number moved from the bottom of the sidebar into the title bar, next to the app name",
                                            "Change: the title bar is now a darker shade than the rest of the window instead of matching the sidebar panels"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.31",
+                         "changelog":  [
+                                           "Add: the update overlay now shows a full running log of what the updater is doing - request URL, response status, download size, extraction and staging paths - instead of a single line that just says \"Downloading...\"/\"Extracting...\""
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.30/SnHelper-1.1.30.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.31/SnHelper-1.1.31.zip"
 }
