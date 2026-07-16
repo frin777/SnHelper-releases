@@ -278,7 +278,23 @@
                                            "Add: a shared log box style in the theme library (monospace, read-only, themed scrollbar) for streaming text output",
                                            "Fix: the TLI-Logs plugin\u0027s log view and status text were using stale hardcoded colors left over from before the theme rework - now uses the shared log box style and current theme colors"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.30",
+                         "changelog":  [
+                                           "Add: a shared pill-shaped badge style in the theme library, for showing a short piece of metadata next to other content",
+                                           "Add: a plugin\u0027s version now shows as a badge in its settings card, below the enable/disable toggle",
+                                           "Fix: the General tab\u0027s card border stretched to fill the whole panel height instead of hugging its content",
+                                           "Change: the host window now shows immediately on launch and loads plugins afterward, instead of waiting for every plugin\u0027s Initialize() to finish first - a slow plugin no longer delays the window from appearing at all",
+                                           "Fix: plugin loading (disk/reflection/Initialize) ran on the UI thread after the window appeared, so a slow plugin still froze the window instead of just delaying its own tab - that work now runs on a background thread, with only the WPF-specific CreateView() step kept on the UI thread",
+                                           "Change: each plugin now loads on its own background task instead of one after another, so one slow plugin only delays itself - the rest show up in the list as soon as they\u0027re ready instead of waiting on the slowest one",
+                                           "Add: a plugin now appears in the sidebar list right away, with a \"Loading...\" label under its name, instead of waiting to appear until its Initialize() finishes",
+                                           "Change: a plugin that\u0027s still loading sorts to the bottom of the sidebar list and can\u0027t be clicked yet, instead of sitting among the ready plugins and opening to a blank/loading view",
+                                           "Add: a thin border around the whole window",
+                                           "Change: the version number moved from the bottom of the sidebar into the title bar, next to the app name",
+                                           "Change: the title bar is now a darker shade than the rest of the window instead of matching the sidebar panels"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.29/SnHelper-1.1.29.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.30/SnHelper-1.1.30.zip"
 }
