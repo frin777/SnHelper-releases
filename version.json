@@ -241,7 +241,13 @@
                          "changelog":  [
                                            "Fix: the single-file publish step was self-triggered from inside SnHelper.csproj via a nested \"dotnet publish\" of itself right after every build. For this WPF project that was unreliable - it could intermittently produce a broken framework-dependent build (the cause of the previous 1.1.20/1.1.22 broken releases) because of how WPF compiles XAML through a temporary sub-project. Single-file publishing is now a separate, explicit step in publish-release.ps1 run only after the normal build fully completes, and a plain local \"dotnet build\" no longer auto-publishes single-file - only publish-release.ps1 produces the single-file release build now"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.25",
+                         "changelog":  [
+                                           "y failed single-file publish can no longer be shipped"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.23/SnHelper-1.1.23.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.25/SnHelper-1.1.25.zip"
 }
