@@ -6,14 +6,14 @@
 <title>SnHelper</title>
 <style>
   :root {
-    --bg: #1c1415;
-    --panel: #241a1b;
-    --panel-border: #3d2a2c;
-    --line: #4a3336;
-    --text: #dcdcdc;
-    --text-dim: #8a7a78;
-    --accent: #c97b4a;
-    --accent-dim: #7a4a30;
+    --bg: #1e1e1e;
+    --panel: #252526;
+    --panel-border: #3c3c3c;
+    --line: #454545;
+    --text: #cccccc;
+    --text-dim: #858585;
+    --accent: #0e639c;
+    --accent-dim: #1177bb;
   }
 
   * { box-sizing: border-box; }
@@ -50,7 +50,7 @@
     align-items: center;
     text-align: center;
     padding: 40px 48px;
-    background: rgba(36, 26, 27, 0.72);
+    background: rgba(37, 37, 38, 0.72);
     border: 1px solid var(--panel-border);
     border-radius: 10px;
     backdrop-filter: blur(6px);
@@ -62,7 +62,7 @@
     height: 46px;
     border-radius: 8px;
     background: var(--accent);
-    color: var(--panel);
+    color: var(--bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@
 
   a.download {
     background: var(--accent);
-    color: var(--panel);
+    color: var(--bg);
     font-weight: 700;
     font-size: 14px;
     text-decoration: none;
@@ -159,8 +159,8 @@
       if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       var ctx = canvas.getContext("2d");
 
-      var accent = [201, 123, 74];
-      var line = [74, 51, 54];
+      var accent = [14, 99, 156];
+      var line = [69, 69, 69];
 
       var W, H, dpr;
       var hub;
