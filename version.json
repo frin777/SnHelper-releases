@@ -247,7 +247,13 @@
                          "changelog":  [
                                            "y failed single-file publish can no longer be shipped"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.26",
+                         "changelog":  [
+                                           "y failed single-file publish can no longer be shipped"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.25/SnHelper-1.1.25.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.26/SnHelper-1.1.26.zip"
 }
