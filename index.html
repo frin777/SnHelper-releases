@@ -2,39 +2,285 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SnHelper</title>
 <style>
+  :root {
+    --bg: #1c1415;
+    --panel: #241a1b;
+    --panel-border: #3d2a2c;
+    --line: #4a3336;
+    --text: #dcdcdc;
+    --text-dim: #8a7a78;
+    --accent: #c97b4a;
+    --accent-dim: #7a4a30;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+
   body {
-    background: #241A1B;
-    color: #DCDCDC;
-    font-family: sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  canvas#net {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 40px 48px;
+    background: rgba(36, 26, 27, 0.72);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .glyph {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--panel);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 0 0 1px var(--accent-dim), 0 0 24px -4px var(--accent);
   }
+
   h1 {
-    margin-bottom: 4px;
+    margin: 0 0 6px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
   }
+
+  .tagline {
+    margin: 0 0 20px;
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+
   .version {
-    color: #8A7A78;
-    margin-bottom: 24px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 22px;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    letter-spacing: 0.03em;
   }
+
   a.download {
-    background: #C97B4A;
-    color: #241A1B;
-    font-weight: bold;
+    background: var(--accent);
+    color: var(--panel);
+    font-weight: 700;
+    font-size: 14px;
     text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 4px;
+    padding: 12px 28px;
+    border-radius: 6px;
+    letter-spacing: 0.01em;
+    transition: filter 0.15s ease, transform 0.15s ease;
+  }
+
+  a.download:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+
+  a.download:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 3px;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    text-align: center;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    opacity: 0.6;
+    letter-spacing: 0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    canvas#net { display: none; }
   }
 </style>
 </head>
 <body>
-  <h1>SnHelper</h1>
-  <div class="version">v1.1.26</div>
-  <a class="download" href="https://github.com/frin777/SnHelper-releases/releases/latest">Download</a>
+  <canvas id="net" aria-hidden="true"></canvas>
+
+  <main>
+    <div class="glyph">Sn</div>
+    <h1>SnHelper</h1>
+    <p class="tagline">A plugin host for your desktop</p>
+    <div class="version">v__VERSION__</div>
+    <a class="download" href="https://github.com/frin777/SnHelper-releases/releases/latest">Download for Windows</a>
+  </main>
+
+  <footer>host / plugins / live</footer>
+
+  <script>
+    (function () {
+      var canvas = document.getElementById("net");
+      if (!canvas || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var ctx = canvas.getContext("2d");
+
+      var accent = [201, 123, 74];
+      var line = [74, 51, 54];
+
+      var W, H, dpr;
+      var hub;
+      var nodes = [];
+      var pulses = [];
+
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width = W + "px";
+        canvas.style.height = H + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        layout();
+      }
+
+      function layout() {
+        hub = { x: W / 2, y: H / 2 };
+        var count = W < 700 ? 6 : 9;
+        var minDim = Math.min(W, H);
+        var radius = minDim * (W < 700 ? 0.34 : 0.3);
+        nodes = [];
+        for (var i = 0; i < count; i++) {
+          var angle = (i / count) * Math.PI * 2 + (i % 2 === 0 ? 0.15 : -0.1);
+          var r = radius * (0.82 + 0.18 * ((i * 37) % 5) / 5);
+          nodes.push({
+            angle: angle,
+            baseRadius: r,
+            wobble: 6 + (i % 3) * 3,
+            speed: 0.00016 + (i % 4) * 0.00003,
+            phase: i * 1.3,
+            size: 2.4 + (i % 3) * 0.8
+          });
+        }
+      }
+
+      function spawnPulse() {
+        var n = nodes[Math.floor(Math.random() * nodes.length)];
+        pulses.push({ node: n, t: 0, dir: Math.random() < 0.5 ? 1 : -1 });
+      }
+
+      var lastPulse = 0;
+
+      function frame(time) {
+        ctx.clearRect(0, 0, W, H);
+
+        var positions = nodes.map(function (n) {
+          var a = n.angle + time * n.speed;
+          var r = n.baseRadius + Math.sin(time * 0.0009 + n.phase) * n.wobble;
+          return { x: hub.x + Math.cos(a) * r, y: hub.y + Math.sin(a) * r, size: n.size };
+        });
+
+        ctx.lineWidth = 1;
+        for (var i = 0; i < positions.length; i++) {
+          var p = positions[i];
+          ctx.strokeStyle = "rgba(" + line.join(",") + ",0.55)";
+          ctx.beginPath();
+          ctx.moveTo(hub.x, hub.y);
+          ctx.lineTo(p.x, p.y);
+          ctx.stroke();
+        }
+
+        if (time - lastPulse > 1400) {
+          spawnPulse();
+          lastPulse = time;
+        }
+
+        pulses = pulses.filter(function (pulse) {
+          pulse.t += 0.014;
+          return pulse.t < 1;
+        });
+
+        pulses.forEach(function (pulse) {
+          var idx = nodes.indexOf(pulse.node);
+          var target = positions[idx];
+          var t = pulse.dir > 0 ? pulse.t : 1 - pulse.t;
+          var x = hub.x + (target.x - hub.x) * t;
+          var y = hub.y + (target.y - hub.y) * t;
+          var alpha = Math.sin(pulse.t * Math.PI);
+          ctx.fillStyle = "rgba(" + accent.join(",") + "," + (0.85 * alpha) + ")";
+          ctx.beginPath();
+          ctx.arc(x, y, 2.6, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        ctx.fillStyle = "rgba(" + line.join(",") + ",0.9)";
+        positions.forEach(function (p) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = "rgba(" + accent.join(",") + ",0.35)";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size + 2.5, 0, Math.PI * 2);
+          ctx.stroke();
+        });
+
+        var hubPulse = 1 + Math.sin(time * 0.002) * 0.08;
+        var hubGrad = ctx.createRadialGradient(hub.x, hub.y, 0, hub.x, hub.y, 20 * hubPulse);
+        hubGrad.addColorStop(0, "rgba(" + accent.join(",") + ",0.5)");
+        hubGrad.addColorStop(1, "rgba(" + accent.join(",") + ",0)");
+        ctx.fillStyle = hubGrad;
+        ctx.beginPath();
+        ctx.arc(hub.x, hub.y, 20 * hubPulse, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "rgba(" + accent.join(",") + ",0.9)";
+        ctx.beginPath();
+        ctx.arc(hub.x, hub.y, 4.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        requestAnimationFrame(frame);
+      }
+
+      window.addEventListener("resize", resize);
+      resize();
+      requestAnimationFrame(frame);
+    })();
+  </script>
 </body>
 </html>
