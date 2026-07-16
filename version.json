@@ -300,7 +300,13 @@
                          "changelog":  [
                                            "Add: the update overlay now shows a full running log of what the updater is doing - request URL, response status, download size, extraction and staging paths - instead of a single line that just says \"Downloading...\"/\"Extracting...\""
                                        ]
+                     },
+                     {
+                         "version":  "1.1.32",
+                         "changelog":  [
+                                           "Add: a Cancel button in the update overlay, and closing the overlay (click outside it or the X) now cancels an in-progress download too - both stop the download, kill the waiting updater process, and let you keep using the app instead of being stuck watching it finish"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.31/SnHelper-1.1.31.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.32/SnHelper-1.1.32.zip"
 }
