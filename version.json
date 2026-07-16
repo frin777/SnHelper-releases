@@ -269,7 +269,16 @@
                                            "Change: plugin icons are found automatically (icon.png/.ico/.jpg/.jpeg in the plugin\u0027s own folder) instead of being named in the manifest",
                                            "Change: darkened the app\u0027s background colors for better contrast"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.29",
+                         "changelog":  [
+                                           "Add: shared primary/secondary button styles in the theme library (accent-filled for the main action, outlined for supporting actions), with hover and disabled states that buttons didn\u0027t have before",
+                                           "Change: the update overlay\u0027s Update/Retry buttons and the TLI-Logs plugin\u0027s Pause/Clear buttons now use the shared button styles instead of one-off inline styling",
+                                           "Add: a shared log box style in the theme library (monospace, read-only, themed scrollbar) for streaming text output",
+                                           "Fix: the TLI-Logs plugin\u0027s log view and status text were using stale hardcoded colors left over from before the theme rework - now uses the shared log box style and current theme colors"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.28/SnHelper-1.1.28.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.29/SnHelper-1.1.29.zip"
 }
