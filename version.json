@@ -222,7 +222,14 @@
                          "changelog":  [
                                            "Fix: testing3"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.21",
+                         "changelog":  [
+                                           "Fix: the previous release (1.1.20) shipped a broken build - the single-file publish step silently failed, producing a small framework-dependent SnHelper.exe with no bundled Fonts, which crashed immediately on startup with \"SnHelper.dll not found\"",
+                                           "Add: publish-release.ps1 now checks the built SnHelper.exe\u0027s size and confirms the Fonts folder exists before packaging a release, so a silently failed single-file publish can no longer be shipped"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.20/SnHelper-1.1.20.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.21/SnHelper-1.1.21.zip"
 }
