@@ -347,7 +347,14 @@
                                            "Fix: the recolored icon wasn\u0027t showing up because Windows Explorer caches exe icons by filename - renamed icon.ico to icon1.ico so the new icon isn\u0027t shadowed by the stale cached one",
                                            "Change: redesigned the app icon as a hub with two connected plugin nodes, matching the host/plugin visual already used on the landing page, instead of just the \"Sn\" letters"
                                        ]
+                     },
+                     {
+                         "version":  "1.1.37",
+                         "changelog":  [
+                                           "Fix: the update installer\u0027s staging folder (SnHelper_staging) was created next to the install folder - if the app lived on the Desktop, that folder showed up right there as clutter - it now lives in the system temp folder instead",
+                                           "Fix: the staging folder was never deleted after a successful update, leaving it behind permanently - it\u0027s now removed once the new files are copied in"
+                                       ]
                      }
                  ],
-    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.36/SnHelper-1.1.36.zip"
+    "downloadUrl":  "https://github.com/frin777/SnHelper-releases/releases/download/v1.1.37/SnHelper-1.1.37.zip"
 }
